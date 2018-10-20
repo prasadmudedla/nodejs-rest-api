@@ -1,0 +1,18 @@
+{
+    "development": {
+        "config_id": "development",
+        "app_name": "AccountService",
+        "app_desc": "manages the user account details",
+        "node_host": "http://localhost",
+        "node_port": 3000,
+        "user_endpoint": "/users/",
+        "json_indentation": 4,
+        "database": "mongodb://biswajit:IcIc1pwd@ds123963.mlab.com:23963/mongo-sandbox"
+    },
+    "testing": {
+        "config_id": "testing"
+    },
+    "production": {
+        "config_id": "production"
+    }
+}
