@@ -12,12 +12,13 @@ router.post('/', (req, res) => {
     User.create ({
             id: parseInt(req.body.id),
             name: req.body.name,
-            email: req.body.email
+            email: req.body.email,
+            createdOn: req.body.createdOn
         }, (err, user) => {
             if (err) {
                 return res.status(500).send(`Oops!!! I'm sick right now.`);
             }
-            res.status(200).send(User);
+            return res.status(res.statusCode).send(user);
         });
 });
 
@@ -41,7 +42,7 @@ router.get('/:id', (req, res) => {
         if (!user) {
             return res.status(404).send(`No user found`);
         }
-        res.status(200).send(user.name);
+        res.status(200).send({"name": user.name, "email": user.email, "createdOn": user.createdOn});
     });
 });
 
