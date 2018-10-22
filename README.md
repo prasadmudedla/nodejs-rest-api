@@ -5,6 +5,12 @@ The "account" service is called with necessary parameters which in turns calls t
 How to use the repo?
 - clone the repo
 - create a mongodb sandbox on [mLab](https://mlab.com/databases/mongo-sandbox) and update the connection string in config.json. It should look like *mongodb://<dbuser>:<dbpassword>@ds123963.mlab.com:23963/mongo-sandbox*
+
+    **or**
+- run a docker instance of mongodb using the following steps
+    - `docker pull mongo`
+    - `docker run --name <name of db> --restart=always -d -p 27017:27017 mongo mongod`
+    now update the connection string in config.json. It should be *mongodb://localhost:27017*
 - execute the command - `npm install` (run npm --version to verify whether npm is installed)
 - execute the command - `npm start`
 

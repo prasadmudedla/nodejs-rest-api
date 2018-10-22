@@ -12,6 +12,7 @@ router.use(bodyParser.json());
 
 // create a user in database
 router.post('/', (req, res) => {
+    req.body["createdOn"] = new Date().toLocaleDateString();
     request({
         url: `${url}/users/`,
         method: "POST",
